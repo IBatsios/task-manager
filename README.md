@@ -18,7 +18,7 @@ jupyter nbextension enable --py widgetsnbextension
 
 &emsp;📦 Optional: Freeze Your Environment
 ```
-&emsp;pip freeze > requirements.txt
+pip freeze > requirements.txt
 ```
 4. Run the Notebook
 ```
