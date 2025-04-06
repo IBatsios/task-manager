@@ -36,20 +36,51 @@
 &emsp;&emsp;📊 Sort Columns	Click column headers to sort by Task, Company, or Deadline<br>
 
 📂 File Structure
-
-```task-manager/
-├── task-manager.ipynb     # Jupyter interface
-├── task_manager.py        # (Optional) Logic helper module
-├── tasks.csv              # Stores task list (auto-created)
-├── README.md              # This file
-└── requirements.txt       # Optional pip requirements
 ```
+task-manager/
+├── cli.py                 # ✅ New CLI tool
+├── task-manager.ipynb
+├── task_manager.py        # (shared logic if needed)
+├── tasks.csv
+├── README.md
+└── requirements.txt
+```
+
+🧑‍💻 Command Line Interface (CLI)
+
+Manage your tasks directly from the terminal with powerful commands:<br>
+✅ Basic Commands
+Command	Description
+```
+python cli.py list	View tasks sorted by # (default)
+python cli.py list --sort task	Sort tasks by task name
+python cli.py list --view company	View unique companies
+python cli.py list --hide-completed	Hide completed tasks from view
+python cli.py add	Add a new task (interactive or with flags)
+python cli.py toggle 3	Toggle completion status of task #3
+python cli.py destroy 3	Move task #3 to trash
+python cli.py destroy --all	Move all tasks to trash (with confirmation)
+```
+🗑️ Trash Management
+
+Tasks removed using destroy are not lost — they're moved to a trash.csv for recovery.
+Command	Description
+```
+python cli.py restore	View all tasks in the trash
+python cli.py restore 2	Restore trashed task #2
+python cli.py restore --all	Restore all trashed tasks (with confirmation)
+```
+📌 Notes
+
+    You can also use python cli.py help for quick guidance.
+
+    Deleted tasks are moved to trash.csv — nothing is lost unless you empty the trash manually.
+
+    Task indices (#) correspond to the list order and are used for toggling, deleting, and restoring.
 
 📌 To-Do / Coming Soon
 
     ☁️ Google Calendar integration
-
-    🖥️ CLI tool (tasks, tasks -add, tasks -all)
 
     📱 Responsive version or web-based frontend
 

@@ -1,5 +1,8 @@
 Completed,Task,Company,Deadline
 True,Make Task App,Github,2025-04-06 16:00:00
-False,Update Readme,Github,2025-04-07 16:00:00
-False,Integrate Google Calendar,Google,2025-04-08 17:00:00
+True,Integrate Google Calendar,Google,2025-04-08 17:00:00
 False,I'm late!,Personal,2025-04-04 8:00
+False,Adding Task per command line,Powershell/CMD,2025-04-06 14:00:00
+False,Deploy app,Acme Inc,2025-04-07 13:30:00
+False,Wrap up CLI,Github,2025-04-06 15:00:00
+True,Update Readme,Github,2025-04-07 16:00:00
