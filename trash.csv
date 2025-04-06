@@ -1,9 +1,4 @@
 Completed,Task,Company,Deadline
-False,Call Client,Acme,2025-04-07 15:00:00
-False,Call Client,Acme,2025-04-07 15:00:00
-False,Call Client,Acme,2025-04-07 15:00:00
-False,Call Client,Acme,2025-04-07 15:00:00
-False,Call Client,Acme,2025-04-07 15:00:00
-False,Call Client,Acme,2025-04-07 15:00:00
-False,Call Client,Acme,2025-04-07 15:00:00
-False,Deploy app,Acme Inc,2025-04-07 13:30:00
+True,Integrate Google Calendar,Google,2025-04-07 10:30
+False,Refactor CLI to support filters,Python,2025-04-10 09:00
+False,Build web frontend with Flask,Python,2025-04-12 15:15

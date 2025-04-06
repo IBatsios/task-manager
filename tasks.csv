@@ -1,9 +1,11 @@
 Completed,Task,Company,Deadline
-True,Make Task App,Github,2025-04-06 16:00:00
-True,Integrate Google Calendar,Google,2025-04-08 17:00:00
-False,I'm late!,Personal,2025-04-04 8:00
-False,Adding Task per command line,Powershell/CMD,2025-04-06 14:00:00
-False,Wrap up CLI,Github,2025-04-06 15:00:00
-True,Update Readme,Github,2025-04-07 16:00:00
-False,Google Calendar Test,Google,2025-04-06 17:15:00
-False,Completed!,Google,2025-04-06 17:31:00
+True,Add trash recovery to notebook,Jupyter,2025-04-03 14:00
+True,Document CLI usage in README,Github,2025-04-08 17:00
+True,Push final commits to repo,Github,2025-04-05 11:45
+True,Add --remind flag to CLI,Bash,2025-04-01 18:00
+False,Show overdue tasks in red,Jupyter,2025-04-04 16:00
+False,Add recurring task support,Google,2025-04-16 09:45
+False,Voice command integration,Python,2025-04-13 08:15
+False,Final Touch,Jupyter,2025-04-06 7:15pm
+False,Enlargen Display,Jupyter,2025-04-06 7:20pm
+False,Call Client,Acme,2025-04-07 15:00:00

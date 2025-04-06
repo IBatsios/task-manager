@@ -1,54 +1,57 @@
 🚀 Setup Instructions
 1. Clone the Repository
-
-&emsp;&emsp;git clone https://github.com/YOUR_USERNAME/task-manager.git<br>
-&emsp;&emsp;cd task-manager<br>
-
-
+```
+git clone https://github.com/YOUR_USERNAME/task-manager.git<br>
+cd task-manager<br>
+```
 2. Create a Virtual Environment (optional but recommended)
-
-&emsp;&emsp;python -m venv venv<br>
-&emsp;&emsp;source venv/bin/activate     # macOS/Linux<br>
-&emsp;&emsp;venv\Scripts\activate        # Windows<br>
-
+```
+python -m venv venv<br>
+source venv/bin/activate     # macOS/Linux<br>
+venv\Scripts\activate        # Windows<br>
+```
 3. Install Requirements
-
-&emsp;&emsp;pip install -r requirements.txt<br>
-&emsp;&emsp;jupyter nbextension enable --py widgetsnbextension<br>
+```
+pip install -r requirements.txt<br>
+jupyter nbextension enable --py widgetsnbextension
+```
 
 &emsp;📦 Optional: Freeze Your Environment
-
-&emsp;&emsp;pip freeze > requirements.txt
-
+```
+&emsp;pip freeze > requirements.txt
+```
 4. Run the Notebook
-
-&emsp;&emsp;jupyter notebook
-
+```
+jupyter notebook
+```
 &emsp;&emsp;Then open the task-manager.ipynb file.<br><br>
 
 🖥 Features<br>
 &emsp;Feature	Description<br>
 &emsp;&emsp;✅ Add Task	Enter task name, company, date & time<br>
-&emsp;&emsp;✅ Toggle Complete	Marks task as complete or incomplete<br>
-&emsp;&emsp;🗑️ Delete Task	Removes task from list and file<br>
+&emsp;&emsp;✅ Toggle Complete	Marks task as complete/incomplete<br>
+&emsp;&emsp;🗑️ Trash System	Deleted tasks go to trash.csv for recovery<br>
+&emsp;&emsp;♻️ Restore from Trash	Recover accidentally deleted tasks<br>
 &emsp;&emsp;🔥 Overdue Highlighting	Red bold styling on overdue, incomplete tasks<br>
-&emsp;&emsp;🔍 Hide Completed	Toggle to hide/show completed tasks<br>
-&emsp;&emsp;📊 Sort Columns	Click column headers to sort by Task, Company, or Deadline<br>
+&emsp;&emsp;🔍 Hide Completed	Toggle to show/hide completed tasks<br>
+&emsp;&emsp;📊 Sort Columns	Sort by Task, Company, or Deadline<br>
+&emsp;&emsp;📅 Google Calendar	Optional Google Calendar integration w/ reminder options<br>
+&emsp;&emsp;🤫 Code Toggle Button	Toggle to show/hide code cells in notebook<br>
 
 📂 File Structure
 ```
 task-manager/
-├── cli.py                 # Main command line interface
-├── task-manager.ipynb     # Jupyter Notebook interface
-├── calendar_utils.py      # Calendar integration logic
-├── google_auth.py         # OAuth setup for Google Calendar
-├── credentials.json       # 🔐 (ignored by Git)
-├── token.json             # 🔐 (generated after login)
-├── task_manager.py
-├── tasks.csv
-├── trash.csv
+├── cli.py                 # CLI entry point
+├── task-manager.ipynb     # Jupyter Notebook UI
+├── calendar_utils.py      # Calendar integration
+├── google_auth.py         # OAuth2 helper
+├── task_manager.py        # Shared logic
+├── tasks.csv              # Saved tasks
+├── trash.csv              # Soft-deleted tasks
+├── requirements.txt       # Dependencies
 ├── README.md
-└── requirements.txt
+├── credentials.json       # 🔐 OAuth credentials (Git ignored)
+└── token.json             # 🔐 Saved token (Git ignored)
 
 ```
 
@@ -67,7 +70,7 @@ python cli.py toggle 3	Toggle completion status of task #3
 python cli.py destroy 3	Move task #3 to trash
 python cli.py destroy --all	Move all tasks to trash (with confirmation)
 ```
-🗑️ Trash Management
+🗑️ Trash Recovery
 
 Tasks removed using destroy are not lost — they're moved to a trash.csv for recovery.
 Command	Description
@@ -115,13 +118,40 @@ This creates a 30-minute event in Google Calendar starting at 3:00 PM with a pop
     Deleted tasks are moved to trash.csv — nothing is lost unless you empty the trash manually.
 
     Task indices (#) correspond to the list order and are used for toggling, deleting, and restoring.
+    
+ 📓 Jupyter Notebook Features<br>
+&emsp;&emsp;Visual task board with interactive widgets<br>
+&emsp;&emsp;Soft-delete (Trash) with restore support<br>
+&emsp;&emsp;Google Calendar integration built-in<br>
+&emsp;&emsp;✅ Optional reminders like 1d, 2h, 30m, 1w, etc.<br>
+&emsp;&emsp;🕓 Warns if reminder is set in the past<br>
+&emsp;&emsp;📦 Task list saved in tasks.csv<br>
+&emsp;&emsp;💾 Deleted tasks saved in trash.csv<br>
+&emsp;&emsp;▶️ Code toggle button for clean UI<br>
 
-📌 To-Do / Coming Soon
 
-    ☁️ Google Calendar integration with Jupyter Notebook
+📌 To use Google Calendar in notebook:
+```
+    Same credentials/token steps as CLI
 
-    📱 Responsive version or web-based frontend
+    Check “Add to Google Calendar”
 
+    Enter reminder offset (optional)
+
+    Submit
+```
+📌 To-Do / Future Ideas
+```
+📱 Responsive web frontend
+
+📤 Email task summaries
+
+🔁 Recurring tasks
+
+🧠 AI Smart Suggestions (grouping & deadlines)
+
+🗓️ Export to ICS calendar format
+```
 🤝 Contributing
 
 PRs welcome! If you have ideas or improvements, feel free to fork and submit a pull request.
