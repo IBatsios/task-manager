@@ -3,6 +3,7 @@ from datetime import datetime
 import argparse
 from colorama import init, Fore, Style
 init(autoreset=True)
+from calendar_utils import add_event_to_calendar
 
 TASKS_FILE = "tasks.csv"
 TRASH_FILE = "trash.csv"
@@ -127,6 +128,13 @@ def add_task(args):
     df.loc[len(df)] = [False, task, company, deadline]
     save_tasks(df)
     print("✅ Task added successfully!")
+
+    # Add to Google Calendar if requested
+    if args.calendar:
+        try:
+            add_event_to_calendar(task, company, deadline, reminder=args.remind)
+        except Exception as e:
+            print(f"⚠️  Could not add to calendar: {e}")
     
 def destroy_task(index=None, delete_all=False):
     df = load_tasks()
@@ -243,7 +251,7 @@ def main():
     list_parser.add_argument(
         "--sort", choices=["task", "company", "deadline", "#"],
         default="#",
-        help='Sort tasks by this field (default: "#")'
+        help='Sort tasks by this field (default: "#")' 
     )
     list_parser.add_argument("--view", choices=["task", "company", "deadline"], help="View unique values for a specific column")
     list_parser.add_argument("--hide-completed", action="store_true", help="Hide completed tasks")
@@ -253,7 +261,9 @@ def main():
     add_parser.add_argument("--task", type=str, help="Task name")
     add_parser.add_argument("--company", type=str, help="Company name")
     add_parser.add_argument("--deadline", type=str, help='Deadline in "MM-DD HH:MM AM/PM" format')
-    
+    add_parser.add_argument("--calendar", action="store_true", help="Also add this task to your Google Calendar")
+    add_parser.add_argument("--remind", action="store_true", help="Add a popup reminder 10 minutes before event")
+  
     # destroy command
     destroy_parser = subparsers.add_parser("destroy", help="Delete task(s)")
     destroy_parser.add_argument("index", type=int, nargs="?", help="Index of task to delete")

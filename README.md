@@ -38,12 +38,18 @@
 📂 File Structure
 ```
 task-manager/
-├── cli.py                 # ✅ New CLI tool
-├── task-manager.ipynb
-├── task_manager.py        # (shared logic if needed)
+├── cli.py                 # Main command line interface
+├── task-manager.ipynb     # Jupyter Notebook interface
+├── calendar_utils.py      # Calendar integration logic
+├── google_auth.py         # OAuth setup for Google Calendar
+├── credentials.json       # 🔐 (ignored by Git)
+├── token.json             # 🔐 (generated after login)
+├── task_manager.py
 ├── tasks.csv
+├── trash.csv
 ├── README.md
 └── requirements.txt
+
 ```
 
 🧑‍💻 Command Line Interface (CLI)
@@ -70,6 +76,41 @@ python cli.py restore	View all tasks in the trash
 python cli.py restore 2	Restore trashed task #2
 python cli.py restore --all	Restore all trashed tasks (with confirmation)
 ```
+
+📆 Google Calendar Integration
+
+You can now add tasks to your Google Calendar directly from the command line!
+🛠️ Setup (One-Time)
+
+    Enable the Google Calendar API in your Google Cloud Console
+
+    Download the credentials.json file and place it in the project folder
+
+    Run any --calendar command for the first time — it will open a browser to log in and authorize your Google account
+
+    A token.json file will be created to store your auth session
+
+    Security tip: Add credentials.json and token.json to your .gitignore to keep your credentials safe.
+
+✅ Calendar Commands
+Command	Description
+```
+python cli.py add --calendar	Adds the new task as a calendar event
+python cli.py add --calendar --remind	Also adds a popup reminder 10 minutes before the task
+```
+📌 Example:
+```
+python cli.py add --task "Call Client" --company Acme --deadline "04-07 03:00 PM" --calendar --remind
+```
+This creates a 30-minute event in Google Calendar starting at 3:00 PM with a popup notification 10 minutes before.
+🔐 Authentication Notes
+
+    First-time use will open a browser for Google login
+
+    You’ll only need to authorize once unless you delete token.json
+
+    You must add yourself as a test user in the OAuth consent screen if using an unverified app
+
 📌 Notes
 
     You can also use python cli.py help for quick guidance.
@@ -80,7 +121,7 @@ python cli.py restore --all	Restore all trashed tasks (with confirmation)
 
 📌 To-Do / Coming Soon
 
-    ☁️ Google Calendar integration
+    ☁️ Google Calendar integration with Jupyter Notebook
 
     📱 Responsive version or web-based frontend
 

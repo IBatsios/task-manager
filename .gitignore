@@ -1,3 +1,7 @@
 __pycache__/
 .ipynb_checkpoints/
 venv/
+
+# Google OAuth credentials
+credentials.json
+token.json
