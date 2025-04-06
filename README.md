@@ -82,13 +82,10 @@ python cli.py restore --all	Restore all trashed tasks (with confirmation)
 You can now add tasks to your Google Calendar directly from the command line!
 🛠️ Setup (One-Time)
 
-    Enable the Google Calendar API in your Google Cloud Console
-
-    Download the credentials.json file and place it in the project folder
-
-    Run any --calendar command for the first time — it will open a browser to log in and authorize your Google account
-
-    A token.json file will be created to store your auth session
+    1. Enable the Google Calendar API in your Google Cloud Console
+	2. Download the credentials.json file and place it in the project folder
+	3. Run any --calendar command for the first time — it will open a browser to log in and authorize your Google account
+	4. A token.json file will be created to store your auth session
 
     Security tip: Add credentials.json and token.json to your .gitignore to keep your credentials safe.
 
