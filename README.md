@@ -1,20 +1,20 @@
 🚀 Setup Instructions
 1. Clone the Repository
 
-&emsp;&emsp;git clone https://github.com/YOUR_USERNAME/task-manager.git
-&emsp;&emsp;cd task-manager
+&emsp;&emsp;git clone https://github.com/YOUR_USERNAME/task-manager.git<br>
+&emsp;&emsp;cd task-manager<br>
 
 
 2. Create a Virtual Environment (optional but recommended)
 
-&emsp;&emsp;python -m venv venv
-&emsp;&emsp;source venv/bin/activate     # macOS/Linux
-&emsp;&emsp;venv\Scripts\activate        # Windows
+&emsp;&emsp;python -m venv venv<br>
+&emsp;&emsp;source venv/bin/activate     # macOS/Linux<br>
+&emsp;&emsp;venv\Scripts\activate        # Windows<br>
 
 3. Install Requirements
 
-&emsp;&emsp;pip install -r requirements.txt
-&emsp;&emsp;jupyter nbextension enable --py widgetsnbextension
+&emsp;&emsp;pip install -r requirements.txt<br>
+&emsp;&emsp;jupyter nbextension enable --py widgetsnbextension<br>
 
 &emsp;📦 Optional: Freeze Your Environment
 
@@ -24,9 +24,10 @@
 
 &emsp;&emsp;jupyter notebook
 
-&emsp;&emsp;Then open the task-manager.ipynb file.<br>
-&emsp;🖥 Features<br>
-&emsp;&emsp;Feature	Description<br>
+&emsp;&emsp;Then open the task-manager.ipynb file.<br><br>
+
+🖥 Features<br>
+&emsp;Feature	Description<br>
 &emsp;&emsp;✅ Add Task	Enter task name, company, date & time<br>
 &emsp;&emsp;✅ Toggle Complete	Marks task as complete or incomplete<br>
 &emsp;&emsp;🗑️ Delete Task	Removes task from list and file<br>
