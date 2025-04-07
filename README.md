@@ -54,6 +54,42 @@ task-manager/
 └── token.json             # 🔐 Saved token (Git ignored)
 
 ```
+🖥️ Run from Anywhere (Command Line Access)
+
+You can make the CLI script available system-wide so you can run tasks from any terminal.
+🪟 Windows
+1. Create a new file called tasks.bat with the following contents:
+```
+@echo off
+python "C:\PATH\TO\YOUR\PROJECT\task-manager\cli.py" %*
+```
+2. Save it in a folder already in your system `PATH`, or add the folder to your `PATH`.
+&emsp;Example: `C:\Users\YourName\Scripts\` or `C:\Program Files\MyTools\`
+
+3. Restart your terminal, then use it anywhere like:
+```
+tasks list
+```
+🐧 Linux / macOS
+1. Create a new shell script called tasks:
+```
+#!/bin/bash
+python3 /path/to/your/project/task-manager/cli.py "$@"
+```
+2. Make it executable:
+```
+chmod +x tasks
+```
+3. Mote it to a directory in your `PATH`, for example
+```
+sudo mv tasks /usr/local/bin/
+```
+4. Now you can run the CLI from anywhere:
+```
+tasks add
+tasks list --hide-completed
+```
+
 
 🧑‍💻 Command Line Interface (CLI)
 
