@@ -1,18 +1,18 @@
 🚀 Setup Instructions
 1. Clone the Repository
 ```
-git clone https://github.com/YOUR_USERNAME/task-manager.git<br>
-cd task-manager<br>
+git clone https://github.com/YOUR_USERNAME/task-manager.git
+cd task-manager
 ```
 2. Create a Virtual Environment (optional but recommended)
 ```
 python -m venv venv<br>
-source venv/bin/activate     # macOS/Linux<br>
-venv\Scripts\activate        # Windows<br>
+source venv/bin/activate     # macOS/Linux
+venv\Scripts\activate        # Windows
 ```
 3. Install Requirements
 ```
-pip install -r requirements.txt<br>
+pip install -r requirements.txt
 jupyter nbextension enable --py widgetsnbextension
 ```
 
