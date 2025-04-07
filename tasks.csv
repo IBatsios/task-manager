@@ -5,7 +5,7 @@ True,Push final commits to repo,Github,2025-04-05 11:45
 True,Add --remind flag to CLI,Bash,2025-04-01 18:00
 False,Show overdue tasks in red,Jupyter,2025-04-04 16:00
 False,Add recurring task support,Google,2025-04-16 09:45
-False,Voice command integration,Python,2025-04-13 08:15
 False,Final Touch,Jupyter,2025-04-06 7:15pm
 False,Enlargen Display,Jupyter,2025-04-06 7:20pm
-False,Call Client,Acme,2025-04-07 15:00:00
+True,Demonstration,Lisa McDonall,2025-04-06 20:00:00
+False,Demonstration,Lisa McDonall,2025-04-06 8:15pm

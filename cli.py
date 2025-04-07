@@ -1,9 +1,14 @@
 import pandas as pd
+import os
 from datetime import datetime
 import argparse
 from colorama import init, Fore, Style
 init(autoreset=True)
 from calendar_utils import add_event_to_calendar
+
+# Ensure it always loads from script directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(script_dir)
 
 TASKS_FILE = "tasks.csv"
 TRASH_FILE = "trash.csv"
